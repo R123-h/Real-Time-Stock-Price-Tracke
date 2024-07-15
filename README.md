@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+---
+title: Real-Time Stock and Crypto Data Table
+---
 
-## Getting Started
+## Project Overview and Purpose
 
-First, run the development server:
+This project aims to create a real-time dashboard for monitoring stock or cryptocurrency data. It fetches real-time data from external APIs, stores it in MongoDB, and displays the most recent entries in a dynamic table on the frontend. Users can select different stocks or cryptocurrencies to monitor and see their real-time data updated in the table.
 
-```bash
+## Setup Instructions
+
+To run the development server, follow these steps:
+
+## 1.Install dependencies:
+
+npm install
+
+# or
+
+yarn install
+
+## 2.Set up environment variables:
+
+Create a .env file in the root directory and add your MongoDB connection string:
+
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>/<database>
+
+## 3. Run the development server:
+
 npm run dev
+
 # or
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+
+## 4.Open your browser:
 
 Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Next.js: React framework for server-rendered applications.
+TypeScript: Typed JavaScript for improved code quality and developer productivity.
+Redux: State management library for predictable state containers.
+MongoDB: NoSQL database for storing real-time data.
+Other dependencies: Axios for API requests, Moment.js for date handling, etc.
 
-## Learn More
+## Adding or Changing Stocks/Cryptos
 
-To learn more about Next.js, take a look at the following resources:
+To add or change stocks or cryptocurrencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.Click on the "Change Stock/Crypto" button.
+2.Use the modal/popup to select a different stock or cryptocurrency.
+3.Save your selection, and the table will update to display real-time data for the selected item.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Additional Notes
 
-## Deploy on Vercel
+1.Redux State Persistence: State is persisted in localStorage to maintain user preferences and data across sessions.
+2.Real-Time Updates: The dashboard updates automatically with new data fetched at regular intervals.
+3.API Integration: Data is fetched from external APIs (e.g., LiveCoinWatch, CoinGecko) every few seconds to ensure real-time accuracy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Node.js
+MongoDB Atlas (or local MongoDB setup)
+React, Redux, and other dependencies as specified in package.json
