@@ -17,8 +17,8 @@ app.prepare().then(async () => {
   const httpServer = http.createServer(server);
 
   // Scheduler
-  const MONGO_URI =
-  "mongodb+srv://ravishna07:Jka9MRNSPNvbQXhw@cluster0.pmx3ah3.mongodb.net/";
+  const MONGO_URI = process.env.MONGODB_URI;
+
 const DATABASE_NAME = "FomoFactory";
 const API_URL = "https://api.coincap.io/v2/assets";
 
